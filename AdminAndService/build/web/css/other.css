@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 16, 2015, 11:32:55 PM
+    Author     : dfChicken
+*/
+.navbar .nav>.active>a,.navbar .nav>.active>a:hover,.navbar .nav>.active>a:focus{
+    background:none;
+    color:#2cc76a;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.navbar .nav>li>a.btn-success{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.navbar-default,.account,.avatar,.account ul li.account_name,.account ul li a,.account li ul,.account li ul li{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.account ul li a:hover {
+    color: black;
+}
+.col-md-12 {
+    margin-top: 70px;
+}
+.navbar{
+    background-color: rgba(0,0,0,0.9);  
+}
