@@ -223,8 +223,10 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="/admin/home#">
                             <% Account account = (Account)request.getSession().getAttribute("account");%>
+                            <% if(account != null) {%>
                             <img alt="" src="<%=account.getAvatar()%>" style="width: 29px; height: 29px;">
                             <span class="username"><%=account.getName()%></span>
+                            <%}%>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
