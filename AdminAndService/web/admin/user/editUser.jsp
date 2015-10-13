@@ -73,21 +73,22 @@
                                       <div class="form-group ">
                                           <label for="cemail" class="control-label col-lg-2">E-Mail </label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="cemail" type="email" name="email" value="<%=user.getEmail()%>" required>
+                                              <input class="form-control" id="cemail" type="email" name="email" value="<%=user.getEmail()%>" readonly>
                                           </div>
                                       </div>
                                       <div class="form-group ">
                                           <label for="curl" class="control-label col-lg-2">API Key</label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="curl" type="text" name="apikey" value="<%=user.getApikey()%>" required>
+                                              <input class="form-control" id="curl" type="text" name="apikey" value="<%=user.getApikey()%>" readonly>
                                           </div>
                                       </div>
                                           <div class="form-group ">
                                           <label for="curl" class="control-label col-lg-2">Role</label>
                                           <div class="col-lg-10">
                                               <select class="form-control" name="role"> 
-                                                  <option value="user">User / Developer</option>
-                                                  <option value="admin">Admin</option>
+                                                  <% String role = user.getRole();%>
+                                                  <option value="user" <%= role.equals("user") ? "selected":"" %> >User / Developer</option>
+                                                  <option value="admin" <%= role.equals("admin") ? "selected":"" %>>Admin</option>
                                               </select>
                                           </div>
                                       </div>

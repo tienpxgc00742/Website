@@ -12,7 +12,7 @@
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-cogs"></i>
-                    <span>Manager</span>
+                    <span>Service</span>
                 </a>
                 <ul class="sub manager" data-manager="${ms}">
                     <li><a  href="/admin/users">Users</a></li>
@@ -23,7 +23,20 @@
                     <li><a  href="/admin/notification">Notification</a></li>
                 </ul>
             </li>
-
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-android"></i>
+                    <span>Application</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="/admin/users">Users</a></li>
+                    <li><a  href="/admin/teams">Teams</a></li>
+                    <li><a  href="/admin/players">Players</a></li>
+                    <li><a  href="/admin/matches">Matches</a></li>
+                    <li><a  href="/admin/statistics">Statistics</a></li>
+                    <li><a  href="/admin/notification">Notification</a></li>
+                </ul>
+            </li>
 
             <li class="sub-menu">
                 <a href="javascript:;" >
