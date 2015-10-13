@@ -48,4 +48,8 @@ public class MatchManager extends AbstractManager<Match>{
       MatchLoader.getInstance().loadAllMatches();
     }
     
+    
+    public List<Match> getByLeague(int id){
+        return access.getMatchesByLeague(id);
+    }
 }

@@ -79,7 +79,7 @@ public class MatchController extends HttpServlet {
 
     }
 
-    protected MatchManager getManager(HttpServletRequest request)
+    protected static MatchManager getManager(HttpServletRequest request)
             throws ServletException, IOException {
         return (MatchManager) request.getSession().getAttribute("matchManager");
     }

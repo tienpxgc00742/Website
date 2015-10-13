@@ -27,33 +27,31 @@ public class MatchLoader {
         MatchLoader ml = MatchLoader.getInstance();
         boolean check = ml.deleteALl();
         System.out.println(check);
-        if(check) {
-            ml.loadAllMatches();
-        }
-       
+
+        ml.loadAllMatches();
+
     }
 
-    public static final String MATCH_PREMIER_URL = "http://long-victor-105516.appspot.com/matches/premier";
-    public static final String MATCH_BUNDESLIGA_URL = "http://long-victor-105516.appspot.com/matches/bundesliga";
-    public static final String MATCH_LALIGA_URL = "http://long-victor-105516.appspot.com/matches/laliga";
-    public static final String MATCH_SERIEA_URL = "http://long-victor-105516.appspot.com/matches/seria";
-    public static final String MATCH_LIGONE_URL = "http://long-victor-105516.appspot.com/matches/ligone";
-    public static final String MATCH_CHAMPIONS_URL = "http://long-victor-105516.appspot.com/matches/uefa";
+    public static final String MATCH_PREMIER_URL = "http://long-victor-105516.appspot.com/api/matches/premier";
+    public static final String MATCH_BUNDESLIGA_URL = "http://long-victor-105516.appspot.com/api/matches/bundesliga";
+    public static final String MATCH_LALIGA_URL = "http://long-victor-105516.appspot.com/api/matches/laliga";
+    public static final String MATCH_SERIEA_URL = "http://long-victor-105516.appspot.com/api/matches/seria";
+    public static final String MATCH_LIGONE_URL = "http://long-victor-105516.appspot.com/api/matches/ligone";
+    public static final String MATCH_CHAMPIONS_URL = "http://long-victor-105516.appspot.com/api/matches/uefa";
 
-     private static final MatchLoader instance = new MatchLoader();
-    
+    private static final MatchLoader instance = new MatchLoader();
+
     public static MatchLoader getInstance() {
         return instance;
     }
 
     private MatchLoader() {
     }
-    
+
     public boolean deleteALl() {
         return MatchAccess.getInstance().deleteAll();
     }
-    
-    
+
     public boolean loadAllMatches() {
         for (int i = 0; i < 6; i++) {
             MyThread myThread = new MyThread(i);
@@ -86,47 +84,52 @@ public class MatchLoader {
         return loadMatch(MATCH_CHAMPIONS_URL, 5);
     }
 
-   
-    
-    private int getTeamId(String name){
-        for(Team team : TeamAccess.getInstance().all()){
-             if(name.contains(team.getName())){
-                 return team.getId();
-             }
+    private Team getTeamByName(String name) {
+        for (Team team : TeamAccess.getInstance().all()) {
+            if (name.contains(team.getName())) {
+                return team;
+            }
         }
-        return 2201;
+        return TeamAccess.getInstance().get(2201);
     }
+
     private boolean loadMatch(String matchUrl, int leagueId) {
         try {
             JSONObject root = JsonConverter.readJsonFromUrl(matchUrl);
             System.out.println(root);
             int count = (int) root.get("count");
-            JSONArray list = root.getJSONArray("matches");
-            for (int i = 0; i < list.length(); i++) {
-                JSONObject match = list.getJSONObject(i);
-                String date = match.getString("date");
-                int homeId = match.getInt("homeId");
-                String homeName = match.getString("homeTeamName");
-                int awayId = match.getInt("awayId");
-                String awayName = match.getString("awayTeamName");
-                
-                homeId = getTeamId(homeName);
-                awayId = getTeamId(awayName);
-                JSONObject result = match.getJSONObject("result");
-                int homeGoals = result.getInt("goalsHomeTeam");
-                int awayGoals = result.getInt("goalsAwayTeam");
-                String url = match.getString("url");
-                String youtube = match.getString("youtube");
-                String description = match.getString("description");
-                String image = match.getString("image");
+            if (!root.isNull("matches")) {
+                JSONArray list = root.getJSONArray("matches");
+                for (int i = 0; i < list.length(); i++) {
+                    JSONObject match = list.getJSONObject(i);
+                    String date = match.getString("date");
+                    int homeId = match.getInt("homeId");
+                    String homeName = match.getString("homeTeamName");
+                    int awayId = match.getInt("awayId");
+                    String awayName = match.getString("awayTeamName");
 
-                Match m = new Match(DateConverter.stringToDate(date, "UTC + 7"), homeName + " vs " + awayName, homeId, awayId, homeGoals, awayGoals, "", "", url, youtube, description, leagueId);
-                if (!MatchAccess.getInstance().add(m)) {
-                    if (!MatchAccess.getInstance().update(m)) {
-                        return false;
+                    Team homeTeam = getTeamByName(homeName);
+                    Team awayTeam = getTeamByName(awayName);
+                    homeId = homeTeam.getId();
+                    awayId = awayTeam.getId();
+                    homeName = homeTeam.getName();
+                    awayName = homeTeam.getName();
+
+                    JSONObject result = match.getJSONObject("result");
+                    int homeGoals = result.getInt("goalsHomeTeam");
+                    int awayGoals = result.getInt("goalsAwayTeam");
+                    String url = "";
+                    if (result.has("url")) {
+                        match.getString("url");
                     }
-                }
+                    String youtube = match.getString("youtube");
+                    String description = match.getString("description");
+                    String image = match.getString("image");
 
+                    Match m = new Match(DateConverter.stringToDate(date, "UTC + 7"), homeName + " vs " + awayName, homeId, awayId, homeGoals, awayGoals, "", "", url, youtube, description, leagueId);
+                    MatchAccess.getInstance().add(m);
+
+                }
             }
         } catch (JSONException ex) {
             Logger.getLogger(MatchLoader.class.getName()).log(Level.SEVERE, null, ex);
@@ -154,7 +157,7 @@ public class MatchLoader {
                 loadLigoneMatches();
             } else if (index == 4) {
                 loadSeriaMatches();
-            } 
+            }
 //            else if (index == 5) {
 //                loadChampionsMatches();
 //            }

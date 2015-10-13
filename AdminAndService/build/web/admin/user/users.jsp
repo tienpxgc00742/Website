@@ -19,24 +19,23 @@
         <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
 
         <title>TNA Users</title>
-        <% String path = request.getContextPath();%>
 
         <!-- Bootstrap core CSS -->
-        <link href="<%=path%>/admin/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/bootstrap-reset.css" rel="stylesheet">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/bootstrap-reset.css" rel="stylesheet">
         <!--external css-->
-        <link href="<%=path%>/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="./assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         <!--right slidebar-->
-        <link href="<%=path%>/admin/css/slidebars.css" rel="stylesheet">
+        <link href="./css/slidebars.css" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="<%=path%>/admin/css/style.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/style-responsive.css" rel="stylesheet" />
+        <link href="./css/style.css" rel="stylesheet">
+        <link href="./css/style-responsive.css" rel="stylesheet" />
         <!--toastr-->
-        <link href="<%=path%>/admin/assets/toastr-master/toastr.css" rel="stylesheet" type="text/css" />
+        <link href="./assets/toastr-master/toastr.css" rel="stylesheet" type="text/css" />
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
         <!--[if lt IE 9]>
-          <script src="<%=path%>/admin/js/html5shiv.js"></script>
-          <script src="<%=path%>/admin/js/respond.min.js"></script>
+          <script src="./js/html5shiv.js"></script>
+          <script src="./js/respond.min.js"></script>
         <![endif]-->
     </head>
 
@@ -171,20 +170,20 @@
         </section>
 
         <!-- js placed at the end of the document so the pages load faster -->
-        <script src="<%=path%>/admin/js/jquery.js"></script>
-        <script src="<%=path%>/admin/js/bootstrap.min.js"></script>
-        <script class="include" type="text/javascript" src="<%=path%>/admin/js/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="<%=path%>/admin/js/jquery.scrollTo.min.js"></script>
-        <script src="<%=path%>/admin/js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script src="<%=path%>/admin/js/respond.min.js" ></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="./js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="./js/jquery.scrollTo.min.js"></script>
+        <script src="./js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="./js/respond.min.js" ></script>
 
         <!--right slidebar-->
-        <script src="<%=path%>/admin/js/slidebars.min.js"></script>
+        <script src="./js/slidebars.min.js"></script>
 
         <!--common script for all pages-->
-        <script src="<%=path%>/admin/js/common-scripts.js"></script>
+        <script src="./js/common-scripts.js"></script>
         <!--toastr-->
-        <script src="<%=path%>/admin/assets/toastr-master/toastr.js"></script>
+        <script src="./assets/toastr-master/toastr.js"></script>
 
         <script type="text/javascript">
             $(function () {

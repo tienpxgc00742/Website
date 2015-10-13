@@ -18,31 +18,31 @@
         <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
 
         <title>TNA Matches</title>
-        <% String path = request.getContextPath();%>
+   
         <!-- Bootstrap core CSS -->
-        <link href="<%=path%>/admin/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/bootstrap-reset.css" rel="stylesheet">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/bootstrap-reset.css" rel="stylesheet">
         <!--external css-->
-        <link  href="<%=path%>/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link  href="./assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-fileupload/bootstrap-fileupload.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-datepicker/css/datepicker.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-timepicker/compiled/timepicker.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-colorpicker/css/colorpicker.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/bootstrap-datetimepicker/css/datetimepicker.css" />
-        <link rel="stylesheet" type="text/css" href="<%=path%>/admin/assets/jquery-multi-select/css/multi-select.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-datepicker/css/datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-timepicker/compiled/timepicker.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-colorpicker/css/colorpicker.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-datetimepicker/css/datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="./assets/jquery-multi-select/css/multi-select.css" />
         <!--right slidebar-->
-        <link href="<%=path%>/admin/css/slidebars.css" rel="stylesheet">
+        <link href="./css/slidebars.css" rel="stylesheet">
         <!-- Custom styles for this template -->
-        <link href="<%=path%>/admin/css/style.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/style-responsive.css" rel="stylesheet" />
+        <link href="./css/style.css" rel="stylesheet">
+        <link href="./css/style-responsive.css" rel="stylesheet" />
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
         <!--[if lt IE 9]>
-          <script src="<%=path%>/admin/js/html5shiv.js"></script>
-          <script src="<%=path%>/admin/js/respond.min.js"></script>
+          <script src="./js/html5shiv.js"></script>
+          <script src="./js/respond.min.js"></script>
         <![endif]-->
     </head>
 
@@ -212,44 +212,44 @@
             <!--footer end-->
         </section>
         <!-- js placed at the end of the document so the pages load faster -->
-        <script src="<%=path%>/admin/js/jquery.js"></script>
-        <script src="<%=path%>/admin/js/bootstrap.min.js"></script>
-        <script class="include" type="text/javascript" src="<%=path%>/admin/js/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="<%=path%>/admin/js/jquery.scrollTo.min.js"></script>
-        <script src="<%=path%>/admin/js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/jquery.validate.min.js"></script>
-        <script src="<%=path%>/admin/js/respond.min.js" ></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="./js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="./js/jquery.scrollTo.min.js"></script>
+        <script src="./js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+        <script src="./js/respond.min.js" ></script>
 
         <!--right slidebar-->
-        <script src="<%=path%>/admin/js/slidebars.min.js"></script>
+        <script src="./js/slidebars.min.js"></script>
 
         <!--common script for all pages-->
-        <script src="<%=path%>/admin/js/common-scripts.js"></script>
+        <script src="./js/common-scripts.js"></script>
 
         <!--script for this page-->
-        <script src="<%=path%>/admin/js/form-validation-script.js"></script>
+        <script src="./js/form-validation-script.js"></script>
 
 
 
-        <script type="text/javascript" src="<%=path%>/admin/assets/fuelux/js/spinner.min.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-daterangepicker/moment.min.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/jquery-multi-select/js/jquery.multi-select.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
+        <script type="text/javascript" src="./assets/fuelux/js/spinner.min.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-daterangepicker/moment.min.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+        <script type="text/javascript" src="./assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+        <script type="text/javascript" src="./assets/jquery-multi-select/js/jquery.multi-select.js"></script>
+        <script type="text/javascript" src="./assets/jquery-multi-select/js/jquery.quicksearch.js"></script>
 
 
         <!--summernote-->
-        <script src="<%=path%>/admin/assets/summernote/dist/summernote.min.js"></script>
+        <script src="./assets/summernote/dist/summernote.min.js"></script>
 
         <!--this page  script only-->
-        <script src="<%=path%>/admin/js/advanced-form-components.js"></script>
+        <script src="./js/advanced-form-components.js"></script>
 
     </body>
 </html>

@@ -5,8 +5,11 @@
  */
 package app.admin.controllers;
 
+
+import app.access.model.Match;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,8 +32,10 @@ public class AdminNotification extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("notification/push.jsp").forward(request, response);
+       // response.setContentType("text/html;charset=UTF-8");
+        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -46,6 +51,7 @@ public class AdminNotification extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        request.getRequestDispatcher("notification/push.jsp").forward(request, response);
     }
 
     /**
@@ -60,7 +66,26 @@ public class AdminNotification extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+       
+        String id = request.getParameter("id");
+        if(id != null) {
+            handleLeagueId(id, request, response);
+        }
     }
+    protected void handleLeagueId(String id,HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+         PrintWriter rWriter = response.getWriter();
+         int mid = Integer.parseInt(id);
+         List<Match> list = MatchController.getManager(request).getByLeague(mid);
+         String res = "";
+         for(Match m : list){
+             String line = "<option value=\"" +m.getTitle() + "\">"+m.getTitle() +"</option>";
+             res += line + "\n";
+         }
+         rWriter.print(res);
+    }
+    
+   
 
     /**
      * Returns a short description of the servlet.

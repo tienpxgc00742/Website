@@ -24,7 +24,8 @@ import java.util.logging.Logger;
 public class MatchAccess extends AbstractAccess<Match> {
 
     public static void main(String[] args) {
-        System.out.println(MatchAccess.getInstance().search("title",""));
+        //System.out.println(MatchAccess.getInstance().search("title",""));
+        System.out.println(MatchAccess.getInstance().getMatchesByLeague(11).size());
     }
     private MatchAccess() {
     }
@@ -55,7 +56,27 @@ public class MatchAccess extends AbstractAccess<Match> {
         }
         return list;
     }
-
+ public List<Match> getMatchesByLeague(int id ) {
+        List<Match> list = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM `tna_match` where `lid`=?;";
+            PreparedStatement ps = DataProcess.getConnection().prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                SimpleDateFormat sdm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date date = sdm.parse(rs.getString(2));
+                list.add(new Match(rs.getInt(1), date, rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getInt(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12),rs.getInt(13)));
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(MatchAccess.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(MatchAccess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
     @Override
     public Match get(int id) {
         Match match = null;
