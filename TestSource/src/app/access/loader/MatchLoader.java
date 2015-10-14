@@ -27,9 +27,9 @@ public class MatchLoader {
         MatchLoader ml = MatchLoader.getInstance();
         boolean check = ml.deleteALl();
         System.out.println(check);
-
-        ml.loadAllMatches();
-
+        if (check) {
+            ml.loadAllMatches();
+        }
     }
 
     public static final String MATCH_PREMIER_URL = "http://long-victor-105516.appspot.com/api/matches/premier";
@@ -113,7 +113,7 @@ public class MatchLoader {
                     homeId = homeTeam.getId();
                     awayId = awayTeam.getId();
                     homeName = homeTeam.getName();
-                    awayName = homeTeam.getName();
+                    awayName = awayTeam.getName();
 
                     JSONObject result = match.getJSONObject("result");
                     int homeGoals = result.getInt("goalsHomeTeam");
