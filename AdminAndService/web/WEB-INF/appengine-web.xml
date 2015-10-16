@@ -6,6 +6,6 @@ xsi:schemaLocation='http://kenai.com/projects/nbappengine/downloads/download/sch
     <version>1</version>
     <ssl-enabled>false</ssl-enabled>
     <sessions-enabled>true</sessions-enabled>
-    <threadsafe>false</threadsafe>
+    <threadsafe>true</threadsafe>
     <use-google-connector-j>true</use-google-connector-j>
 </appengine-web-app>

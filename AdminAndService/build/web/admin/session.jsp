@@ -1,3 +1,4 @@
+<%@page import="app.admin.manager.NewsManager"%>
 <%@page import="app.admin.manager.LeagueManager"%>
 <%@page import="app.admin.manager.StatisticManager"%>
 <%@page import="app.admin.manager.MatchManager"%>
@@ -30,4 +31,9 @@
     if (leagueManager == null) {
         leagueManager = new LeagueManager();
         request.getSession().setAttribute("leagueManager", leagueManager);
+    }%>
+    <%  NewsManager newsManager = (NewsManager) request.getSession().getAttribute("newsManager");
+    if (newsManager == null) {
+        newsManager = new NewsManager();
+        request.getSession().setAttribute("newsManager", newsManager);
     }%>

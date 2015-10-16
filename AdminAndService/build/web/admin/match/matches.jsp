@@ -107,7 +107,7 @@
                                     <div class="form-group">
                                         <label for="cname" class="control-label sr-only">Search </label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="cname"  minlength="2" type="text" name="searchText" placeholder="Text" value="<%=request.getParameter("searchText")%>" required>
+                                            <input class="form-control" id="cname"  minlength="2" type="text" name="searchText" placeholder="Text" value="<%=request.getParameter("searchText") == null ? "" : request.getParameter("searchText")%>" required>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-shadow btn-info">Search</button>

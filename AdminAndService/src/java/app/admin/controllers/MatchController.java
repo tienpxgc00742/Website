@@ -55,13 +55,13 @@ public class MatchController extends HttpServlet {
 
             if ("del".equals(action)) {
                 delete(request, response);
-                 response.sendRedirect("matches");
+                response.sendRedirect("matches");
             } else if ("load".equals(action)) {
                 loadNews(request, response);
                 request.getRequestDispatcher("match/matches.jsp").forward(request, response);
             }
-            
-        }else {
+
+        } else {
             request.getRequestDispatcher("match/matches.jsp").forward(request, response);
         }
 
@@ -72,8 +72,8 @@ public class MatchController extends HttpServlet {
         MatchManager manager = getManager(request);
         String id = request.getParameter("id");
         if (id != null) {
-            if(manager.delete(Integer.parseInt(id))) {
-                 response.sendRedirect("matches");
+            if (manager.delete(Integer.parseInt(id))) {
+                response.sendRedirect("matches");
             }
         }
 
@@ -102,13 +102,15 @@ public class MatchController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
+        MatchManager manager = getManager(request);
+       
         String action = request.getParameter("action");
         if ("edit".equals(action)) {
             edit(request, response);
         } else if ("search".equals(action)) {
             search(request, response);
         }
+
     }
 
     protected void edit(HttpServletRequest request, HttpServletResponse response)

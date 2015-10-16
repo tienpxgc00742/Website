@@ -16,18 +16,18 @@
         <link rel="shortcut icon" href="img/favicon.png">
 
         <title>TNA Players</title>
-        <% String path = request.getContextPath();%>
+    
 
-        <link href="<%=path%>/admin/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/bootstrap-reset.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/font-awesome.css" rel="stylesheet" />
-        <link href="<%=path%>/admin/css/slidebars.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/style.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/style-responsive.css" rel="stylesheet" />
-        <link href="<%=path%>/admin/css/tpxcss.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/toastr.css" rel="stylesheet">
-        <link href="<%=path%>/admin/css/tpxcss.css" rel="stylesheet">
-        <link rel="stylesheet" href="<%=path%>/admin/css/owl.carousel.css" type="text/css">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/bootstrap-reset.css" rel="stylesheet">
+        <link href="./css/font-awesome.css" rel="stylesheet" />
+        <link href="./css/slidebars.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+        <link href="./css/style-responsive.css" rel="stylesheet" />
+        <link href="./css/tpxcss.css" rel="stylesheet">
+        <link href="./css/toastr.css" rel="stylesheet">
+        <link href="./css/tpxcss.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/owl.carousel.css" type="text/css">
     </head>
 
     <body>
@@ -76,7 +76,7 @@
                         <div id="pagi"></div>
                         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-                        <script src="<%=path%>/admin/js/bootstrap-paginator.js"></script>
+                        <script src="./js/bootstrap-paginator.js"></script>
                         <script type='text/javascript'>
 
                             var options = {
@@ -114,32 +114,32 @@
             <%@include file="./footer.jsp" %>
             <!--footer end-->
         </section>
-<!--        <script src="<%=path%>/admin/js/jquery.js"></script>-->
-        <script class="include" type="text/javascript" src="<%=path%>/admin/js/jquery.dcjqaccordion.2.7.js"></script>
-        <script src="<%=path%>/admin/js/jquery.scrollTo.min.js"></script>
-        <script src="<%=path%>/admin/js/slidebars.min.js"></script>
-        <script src="<%=path%>/admin/js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script src="<%=path%>/admin/js/respond.min.js" ></script>
-        <script src="<%=path%>/admin/js/common-scripts.js"></script>
-        <script src="<%=path%>/admin/js/toastr.js"></script>
-        <script src="<%=path%>/admin/js/jquery.sparkline.js" type="text/javascript"></script>
-        <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-        <script src="<%=path%>/admin/js/owl.carousel.js" ></script>
-        <script src="<%=path%>/admin/js/jquery.customSelect.min.js" ></script>
-        <script src="<%=path%>/admin/js/slidebars.min.js"></script>
-        <script src="<%=path%>/admin/js/common-scripts.js"></script>
-        <script src="<%=path%>/admin/js/sparkline-chart.js"></script>
-        <script src="<%=path%>/admin/js/easy-pie-chart.js"></script>
-        <script src="<%=path%>/admin/js/count.js"></script>
-        <script src="<%=path%>/admin/js/tpxjs.js"></script>
+<!--        <script src="./js/jquery.js"></script>-->
+        <script class="include" type="text/javascript" src="./js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="./js/jquery.scrollTo.min.js"></script>
+        <script src="./js/slidebars.min.js"></script>
+        <script src="./js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="./js/respond.min.js" ></script>
+        <script src="./js/common-scripts.js"></script>
+        <script src="./js/toastr.js"></script>
+        <script src="./js/jquery.sparkline.js" type="text/javascript"></script>
+        <script src="./assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+        <script src="./js/owl.carousel.js" ></script>
+        <script src="./js/jquery.customSelect.min.js" ></script>
+        <script src="./js/slidebars.min.js"></script>
+        <script src="./js/common-scripts.js"></script>
+        <script src="./js/sparkline-chart.js"></script>
+        <script src="./js/easy-pie-chart.js"></script>
+        <script src="./js/count.js"></script>
+        <script src="./js/tpxjs.js"></script>
         <!--flot-->
-        <script type="text/javascript" src="<%=path%>/admin/js/flot/jquery.flot.min.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/flot/jquery.flot.time.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/flot/jshashtable-2.1.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/flot/jquery.numberformatter-1.2.3.min.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/flot/jquery.flot.symbol.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/flot/jquery.flot.axislabels.js"></script>
-        <script type="text/javascript" src="<%=path%>/admin/js/tpxjs.js"></script>
+        <script type="text/javascript" src="./js/flot/jquery.flot.min.js"></script>
+        <script type="text/javascript" src="./js/flot/jquery.flot.time.js"></script>
+        <script type="text/javascript" src="./js/flot/jshashtable-2.1.js"></script>
+        <script type="text/javascript" src="./js/flot/jquery.numberformatter-1.2.3.min.js"></script>
+        <script type="text/javascript" src="./js/flot/jquery.flot.symbol.js"></script>
+        <script type="text/javascript" src="./js/flot/jquery.flot.axislabels.js"></script>
+        <script type="text/javascript" src="./js/tpxjs.js"></script>
 
       
     </body>

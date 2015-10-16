@@ -5,7 +5,9 @@
  */
 package app.admin.controllers;
 
+import app.access.model.League;
 import app.access.model.Match;
+import app.admin.manager.LeagueManager;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -82,17 +84,25 @@ System.out.println(isoFormat.format(calendar.getTime()));
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+   private LeagueManager lm = new LeagueManager();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
+       
         String action = request.getParameter("action");
         if ("league".equals(action)) {
             handleLeagueId(request, response);
         } 
         else if ("formatDate".equals(action)) {
             formatDate(request, response);
+        }else if("allLeague".equals(action)){
+             String line = "";
+              
+            for (League l : lm.getAll()) {
+                line += "<option value=\"" + l.getId() + "\">" + l.getName() + "</option>";
+            }
+            response.getWriter().print(line);
         }
 
     }

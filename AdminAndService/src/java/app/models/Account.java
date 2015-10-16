@@ -42,7 +42,7 @@ public class Account implements Serializable {
             UserAccess access = UserAccess.getInstance();
             User user = access.getByEmail(email);
             if (user == null) {
-                apikey = APIManager.getInstance().getApiKey();
+                this.apikey = APIManager.getInstance().getApiKey();
                 if (access.add(new User(email, name, apikey, role))) {
                     if ((user = access.getByEmail(email)) != null) {
                         StatisticAccess.getInstance().add(new Statistic(user.getId(), 1, 0));

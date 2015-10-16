@@ -81,10 +81,7 @@
                                     <div class="form-group" >
                                         <label>Leagues</label>
                                         <select class="form-control" id="league" name="league" >
-                                            <option></option>
-                                            <%for (League l : leagueManager.getAll()) {%>
-                                            <option value="<%=l.getId()%>"><%=l.getName()%></option>
-                                            <%}%>
+                                            
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -178,6 +175,7 @@
         <script type="text/javascript">
             var state = "now";
             var dateres = "";
+            var choice = "videos";
             $(function () {
                 Parse.initialize("pdYK0WsHAeH1LZjkYJHvzjizTFPexV15rmNkDaqM", "iArj7ofWqyvtpqOPXGDd6AkD5jnZSTuFFPZQf8Nk");
                 var i = -1;
@@ -187,7 +185,7 @@
                 var infoToast = "info";
                 var warningToast = "warning";
                 var errorToast = "error";
-                $('#showtoast').mouseenter(function() {
+                $('#showtoast').mouseenter(function () {
                     checkdate();
                 });
                 $('#showtoast').click(function () {
@@ -239,9 +237,9 @@
                 //                $('#cleartoasts').click(function () {
                 //                    toastr.clear();
                 //                });
-                
+
                 function checkdate() {
-                      var test = $(".datetimepicker-hours").find(".switch").text();
+                    var test = $(".datetimepicker-hours").find(".switch").text();
                     var mTime = $(".datetimepicker-minutes").find(".active").text();
 
                     var text = test + " " + mTime;
@@ -258,7 +256,7 @@
                         }
                     });
                 }
-               
+
 
                 function push() {
 
@@ -370,18 +368,25 @@
                 }
 
                 $("#league").change(function () {
-                    var sid = $(this).val();
-                    $.ajax({
-                        type: "POST",
-                        url: "/admin/notification",
-                        data: {
-                            action: "league",
-                            id: sid
-                        },
-                        success: function (res) {
-                            $("#title").html(res);
-                        }
-                    });
+                    if (choice === "videos") {
+                        var sid = $(this).val();
+                        $.ajax({
+                            type: "POST",
+                            url: "/admin/notification",
+                            data: {
+                                action: "league",
+                                id: sid
+                            },
+                            success: function (res) {
+                                $("#title").html(res);
+                            }
+                        });
+                    } else if (choice === "news") {
+                        $("#title").attr("data-id", $(this).val());
+                        $("#title").html("<option>Breaking News</option>");
+                        var m = $('option:selected', this).text();
+                        $("#message").html(m);
+                    }
                 });
 
                 $(".check-now").click(function () {
@@ -396,6 +401,37 @@
 //                    alert(mt.getTime());
                 });
 
+                $("#type").change(function () {
+                    var type = $(this).val();
+                    if (type === "videos") {
+                        choice = "videos";
+                        $.ajax({
+                            type: "POST",
+                            url: "/admin/notification",
+                            data: {
+                                action: "allLeague"
+                            },
+                            success: function (res) {
+                                $("#league").html(res);
+                            }
+                        });
+                        
+                    } else if (type === "news") {
+                        choice = "news";
+                        $.ajax({
+                            type: "POST",
+                            url: "/admin/news",
+                            data: {
+                                action: "all"
+                            },
+                            success: function (res) {
+                                $("#league").html(res);
+                            }
+                        });
+                    }
+                    $("#title").html("");
+                    $("#message").html("");
+                });
             });
         </script>
 

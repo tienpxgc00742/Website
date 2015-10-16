@@ -114,12 +114,13 @@ public class MyFilter implements Filter {
             Account account = (Account) req.getSession().getAttribute("account");
 //           if(account != null){
 //               if("admin".equals(account.getRole())) {
-//                   
+//                    chain.doFilter(request, response);
 //               }
 //           }else {
 //               res.sendRedirect("/home");
 //           }
-              chain.doFilter(request, response);
+            
+            chain.doFilter(request, response);
         } catch (Throwable t) {
 	    // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then

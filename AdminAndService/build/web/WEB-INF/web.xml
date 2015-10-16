@@ -80,6 +80,10 @@
         <servlet-name>PlayersController</servlet-name>
         <servlet-class>app.admin.controllers.PlayersController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewsController</servlet-name>
+        <servlet-class>app.admin.controllers.NewsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PlayerController</servlet-name>
         <url-pattern>/api/players</url-pattern>
@@ -151,6 +155,10 @@
     <servlet-mapping>
         <servlet-name>PlayersController</servlet-name>
         <url-pattern>/admin/players</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewsController</servlet-name>
+        <url-pattern>/admin/news</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
